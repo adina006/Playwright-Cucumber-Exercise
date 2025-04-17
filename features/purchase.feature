@@ -4,11 +4,12 @@ Feature: Purchase Feature
     Given I open the "https://www.saucedemo.com/" page
 
   Scenario:  Validate successful purchase text
-  Then I will login as 'standard_user'
+  When I login as 'standard_user'
   Then I will add the backpack to the cart
-    # TODO: Select the cart (top-right)
-    # TODO: Select Checkout
-    # TODO: Fill in the First Name, Last Name, and Zip/Postal Code
-    # TODO: Select Continue
-    # TODO: Select Finish
-    # TODO: Validate the text 'Thank you for your order!'
+  Then I will validate the badge number on the cart
+  Then I will click on the cart
+  Then I will click on the checkout button
+  Then I will fill in the details "John" "Doe" "12345"
+  Then I will click on the continue button
+  Then I will click on the finish button
+  Then I should see the message "Thank you for your order!"
